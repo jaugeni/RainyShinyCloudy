@@ -122,8 +122,8 @@
 				936621541E270AD600A92E47 /* Assets.xcassets */,
 				936621561E270AD600A92E47 /* LaunchScreen.storyboard */,
 				936621591E270AD600A92E47 /* Info.plist */,
-				9366217B1E28169B00A92E47 /* Constants.swift */,
 				9366217D1E28191200A92E47 /* CurrentWeather.swift */,
+				9366217B1E28169B00A92E47 /* Constants.swift */,
 			);
 			path = RainyShinyCloudy;
 			sourceTree = "<group>";
