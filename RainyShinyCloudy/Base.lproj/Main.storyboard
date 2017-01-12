@@ -51,7 +51,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vcy-ky-cVJ">
                                         <rect key="frame" x="240" y="83" width="154" height="186"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tk9-Zp-YKl">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tk9-Zp-YKl">
                                                 <rect key="frame" x="17" y="0.0" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="Eq9-Pw-yYO"/>
@@ -168,7 +168,7 @@
                         <outlet property="currentTempLbl" destination="hQo-t2-DHk" id="9mW-TZ-wn9"/>
                         <outlet property="currentWeatherImage" destination="tk9-Zp-YKl" id="lz5-OQ-hs1"/>
                         <outlet property="currentWeatherTypeLbl" destination="DCc-O0-gFG" id="KJ8-BJ-QAV"/>
-                        <outlet property="dataLbl" destination="vOb-ct-aUa" id="BXr-qp-TBU"/>
+                        <outlet property="dateLbl" destination="vOb-ct-aUa" id="Ka8-Kp-TwB"/>
                         <outlet property="locationLbl" destination="DAr-1b-OU5" id="M83-F6-Bb5"/>
                         <outlet property="tableView" destination="JJU-RM-GjZ" id="4KY-eU-Dmi"/>
                     </connections>
