@@ -11,10 +11,10 @@ import Alamofire
 
 class  Forecast {
     
-    var _date: String!
-    var _weatherType: String!
-    var _highTemp: String!
-    var _lowTemp: String!
+    private var _date: String!
+    private var _weatherType: String!
+    private var _highTemp: String!
+    private var _lowTemp: String!
     
     var date: String {
         if _date == nil {
@@ -44,26 +44,23 @@ class  Forecast {
         return _lowTemp
     }
     
+    private func convertToFarenhientFromKelvin(temp: Double) -> String {
+        let kelvinToFarenheitPreDivision = (temp * (9/5) - 459.67)
+        
+        let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
+        return "\(kelvinToFarenheit)°"
+    }
+    
     init(weatherDict: Dictionary<String, AnyObject>) {
         
         if let temp = weatherDict["temp"] as? Dictionary<String, AnyObject> {
             
             if let min = temp["min"] as? Double {
-                
-                let kelvinToFarenheitPreDivision = (min * (9/5) - 459.67)
-                
-                let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
-                
-                self._lowTemp = "\(kelvinToFarenheit)"
+                self._lowTemp = convertToFarenhientFromKelvin(temp: min)
             }
             
             if let max = temp["max"] as? Double {
-                
-                let kelvinToFarenheitPreDivision = (max * (9/5) - 459.67)
-                
-                let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision/10))
-                
-                self._highTemp = "\(kelvinToFarenheit)"
+                self._highTemp = convertToFarenhientFromKelvin(temp: max)
             }
         }
         
@@ -78,7 +75,6 @@ class  Forecast {
             let unixConvertedDate = Date(timeIntervalSince1970: date)
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .full
-            dateFormatter.dateFormat = "EEEE"
             dateFormatter.timeStyle = .none
             self._date = unixConvertedDate.dayOfTheWeek()
         }
