@@ -10,7 +10,7 @@ import Foundation
 
 typealias DownloadCompleate = () -> ()
 
-let currentWeatherURLBasic = "http://api.openweathermap.org/data/2.5/weather?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&appid=ef3d038f7b3f9178866f296d63e1158b"
+let currentWeatherURLBasic = "http://api.openweathermap.org/data/2.5/weather?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&appid="
 
-let forecastURLBasic = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&cnt=10&mode=json&appid=ef3d038f7b3f9178866f296d63e1158b"
+let forecastURLBasic = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&cnt=10&mode=json&appid="
 
