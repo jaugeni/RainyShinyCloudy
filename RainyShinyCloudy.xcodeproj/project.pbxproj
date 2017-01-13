@@ -17,6 +17,7 @@
 		9366216E1E270AD700A92E47 /* RainyShinyCloudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9366216D1E270AD700A92E47 /* RainyShinyCloudyUITests.swift */; };
 		9366217C1E28169B00A92E47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9366217B1E28169B00A92E47 /* Constants.swift */; };
 		9366217E1E28191200A92E47 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9366217D1E28191200A92E47 /* CurrentWeather.swift */; };
+		936621801E2847AC00A92E47 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9366217F1E2847AC00A92E47 /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9366216F1E270AD700A92E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9366217B1E28169B00A92E47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9366217D1E28191200A92E47 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		9366217F1E2847AC00A92E47 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		ACA5EE06D0415BC053EA40B2 /* Pods-RainyShinyCloudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShinyCloudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShinyCloudy/Pods-RainyShinyCloudy.release.xcconfig"; sourceTree = "<group>"; };
 		FADF2C95534C0D23C0FBEF38 /* Pods_RainyShinyCloudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyShinyCloudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,14 +118,13 @@
 		9366214C1E270AD600A92E47 /* RainyShinyCloudy */ = {
 			isa = PBXGroup;
 			children = (
+				936621811E2847B300A92E47 /* Models */,
 				9366214D1E270AD600A92E47 /* AppDelegate.swift */,
 				9366214F1E270AD600A92E47 /* WeatherVC.swift */,
 				936621511E270AD600A92E47 /* Main.storyboard */,
 				936621541E270AD600A92E47 /* Assets.xcassets */,
 				936621561E270AD600A92E47 /* LaunchScreen.storyboard */,
 				936621591E270AD600A92E47 /* Info.plist */,
-				9366217D1E28191200A92E47 /* CurrentWeather.swift */,
-				9366217B1E28169B00A92E47 /* Constants.swift */,
 			);
 			path = RainyShinyCloudy;
 			sourceTree = "<group>";
@@ -144,6 +145,16 @@
 				9366216F1E270AD700A92E47 /* Info.plist */,
 			);
 			path = RainyShinyCloudyUITests;
+			sourceTree = "<group>";
+		};
+		936621811E2847B300A92E47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9366217D1E28191200A92E47 /* CurrentWeather.swift */,
+				9366217B1E28169B00A92E47 /* Constants.swift */,
+				9366217F1E2847AC00A92E47 /* Forecast.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		BE4E5E6BEA501E5A5B395204 /* Pods */ = {
@@ -347,6 +358,7 @@
 				9366214E1E270AD600A92E47 /* AppDelegate.swift in Sources */,
 				9366217E1E28191200A92E47 /* CurrentWeather.swift in Sources */,
 				9366217C1E28169B00A92E47 /* Constants.swift in Sources */,
+				936621801E2847AC00A92E47 /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

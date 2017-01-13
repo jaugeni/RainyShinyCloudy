@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var currentTempLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -18,6 +19,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var currentWeather = CurrentWeather()
+    var forecast: Forecast!
+    var forecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +28,36 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        currentWeather = CurrentWeather()
+        
+        
         currentWeather.downloadWeatherDetails {
-            self.updateMainUI()
+            self.downloadForecastData{
+                self.updateMainUI()
+            }
         }
         
+    }
+    
+    func downloadForecastData(completed: DownloadCompleate) {
+        //Downloading forecast weather data for TableView
+        let forecastURL = URL(string: forecastURLBasic)!
+        Alamofire.request(forecastURL).responseJSON { response in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                    
+                    for obj in list {
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecasts.append(forecast)
+                        print(obj)
+                    }
+                }
+            }
+        }
+        completed()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,8 +82,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         locationLbl.text = currentWeather.cityName
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
     }
-
-   
-
+    
+    
+    
 }
 
